@@ -72,8 +72,8 @@ python benchmark.py \
 
 ## Select models
 
-The built-in full set contains 33 text/reasoning models as of October 24, 2026:
-27 OpenAI models and six Anthropic models. It includes active models and models
+The built-in full set contains 34 text/reasoning models as of October 26, 2026:
+28 OpenAI models and six Anthropic models. It includes active models and models
 that are deprecated but not yet retired. Deprecated models remain available
 through the API until their provider's shutdown date, allowing migration
 comparisons.
@@ -98,8 +98,8 @@ python benchmark.py --all-openai-models
 python benchmark.py --all-anthropic-models
 ```
 
-The built-in support matrix currently contains 50 valid model/tier pairs. The
-full default run is therefore 50 pairs × 6 scenarios × 10 runs = 3,000 planned
+The built-in support matrix currently contains 52 valid model/tier pairs. The
+full default run is therefore 52 pairs × 6 scenarios × 10 runs = 3,120 planned
 generations, so review the dry run before spending API credits.
 
 Benchmark only particular models when you do not want the full run:

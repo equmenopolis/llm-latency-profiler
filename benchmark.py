@@ -40,12 +40,13 @@ from openai import OpenAI
 
 
 # Active general text/reasoning models in the OpenAI model catalog as of
-# 2026-10-24. Specialized image, audio, embedding, moderation, cybersecurity,
+# 2026-10-26. Specialized image, audio, embedding, moderation, cybersecurity,
 # life-sciences, and open-weight models are intentionally omitted because they
 # are not comparable through this general text-streaming Responses test.
 OPENAI_CURRENT_TEXT_MODELS = (
     "gpt-6-astra",
     "gpt-6.1-sol",
+    "gpt-6.1-terra",
     "gpt-6-luna",
     "gpt-6-sol",
     "gpt-5.6-sol",
@@ -97,9 +98,9 @@ ANTHROPIC_TEXT_MODELS = (
     ANTHROPIC_CURRENT_TEXT_MODELS + ANTHROPIC_DEPRECATED_TEXT_MODELS
 )
 ALL_TEXT_MODELS = OPENAI_TEXT_MODELS + ANTHROPIC_TEXT_MODELS
-MODEL_CATALOG_AS_OF = "2026-10-24"
+MODEL_CATALOG_AS_OF = "2026-10-26"
 # Based on OpenAI's Standard, Fast, and Ultrafast compatibility documentation
-# and previously verified pairs as of 2026-10-24. Newly cataloged deprecated
+# and previously verified pairs as of 2026-10-26. Newly cataloged deprecated
 # models are Standard-only unless current documentation confirms another tier.
 # Keep this explicit: unsupported combinations must be removed before job
 # creation rather than discovered by making billable calls. Unknown model IDs
@@ -107,6 +108,7 @@ MODEL_CATALOG_AS_OF = "2026-10-24"
 MODEL_TIER_SUPPORT: dict[str, tuple[str, ...]] = {
     "gpt-6-astra": ("normal", "fast", "ultrafast"),
     "gpt-6.1-sol": ("normal", "fast", "ultrafast"),
+    "gpt-6.1-terra": ("normal", "fast"),
     "gpt-6-luna": ("normal", "fast"),
     "gpt-6-sol": ("normal", "fast"),
     "gpt-5.6-sol": ("normal", "fast"),
@@ -142,7 +144,7 @@ MODEL_TIER_SUPPORT: dict[str, tuple[str, ...]] = {
     "claude-mythos-preview": ("normal",),
     "claude-sonnet-4-5-20250929": ("normal",),
 }
-MODEL_TIER_SUPPORT_AS_OF = "2026-10-24"
+MODEL_TIER_SUPPORT_AS_OF = "2026-10-26"
 TIER_LABELS = {
     "normal": "default",
     "standard": "default",
